@@ -36,7 +36,7 @@ dependencies {
     }
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine")
     testRuntimeOnly("org.junit.vintage:junit-vintage-engine")
-
+    runtimeOnly('com.h2database:h2')
 }
 
 test {
