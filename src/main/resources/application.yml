@@ -23,3 +23,5 @@ spring:
   config:
     import:
       application-oauth.yml
+  session:
+    store-type: jdbc
