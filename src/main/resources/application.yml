@@ -22,6 +22,6 @@ spring:
     cache: false
   config:
     import:
-      application-oauth.yml
+      #application-oauth.yml
   session:
     store-type: jdbc
