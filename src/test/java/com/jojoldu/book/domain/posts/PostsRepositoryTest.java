@@ -1,7 +1,7 @@
 package com.jojoldu.book.domain.posts;
 
-import org.apache.tomcat.jni.Local;
-import org.junit.After;
+import org.aspectj.lang.annotation.After;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +18,7 @@ class PostsRepositoryTest {
     @Autowired
     PostsRepository postsRepository;
 
-    @After  //Junit 단위 테스트가 끝날 때 마다 수행되는 메소드를 지정
+    @AfterEach  //Junit 단위 테스트가 끝날 때 마다 수행되는 메소드를 지정
     public void cleanup(){
         postsRepository.deleteAll();;
     }
