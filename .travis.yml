@@ -19,3 +19,6 @@ notifications:
   email:
     recipients:
       - dbal5886@gmail.com
+# gradlew 실행 권한 설정
+before_install:
+  - chmod +x gradlew
