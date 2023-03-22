@@ -22,6 +22,7 @@ spring:
     cache: false
   config:
     import:
+      # 서버에올릴때는 제외
       #application-oauth.yml
   session:
     store-type: jdbc
