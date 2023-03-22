@@ -1,18 +1,20 @@
 language: java
 jdk:
-    - openjdk17
+  - openjdk17
 branches:
   only:
     - main
-#Travis CI  서버의 Home
-#gradle을 통하여 의존성을 받게 되면 이를 캐시하여 배포할 때 마다 다시 받지 않도록 설정한다.
-cache:
-  directories:
-    - '$HOME/.m2/repository'
-    - '$HOME/.gradle'
-script: ".gradlew clean build"
 
-#CI 실행 완료 시 메일로 알림
+# Travis CI Server's Home
+# 해당 디렉토리에서 캐시하여, 같은 의종성은 다음 배포때부터 다시 받지않도록 설정
+cache:
+  - directories:
+      - '$HOME/.m2/repository'
+      - '$HOME/.gradle'
+
+script: "./gradlew clean build"
+
+# CI 실행 완료 시 설정한 메일로 알람
 notifications:
   email:
     recipients:
