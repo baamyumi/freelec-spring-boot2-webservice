@@ -13,11 +13,6 @@ cache:
       - '$HOME/.gradle'
 script: "./gradlew clean build"
 
-# CI 실행 완료 시 설정한 메일로 알람
-notifications:
-  email:
-    recipients:
-      - dbal5886@gmail.com
 # gradlew 실행 권한 설정
 before_install:
   - chmod +x gradlew
@@ -30,6 +25,7 @@ before_deploy:
   - cd before-deploy && zip -r before-deploy * # before-deploy로 이동후 전체 압축
   - cd ../ && mkdir -p deploy # 상위 디렉토리로 이동후 deploy 디렉토리 생성
   - mv before-deploy/before-deploy.zip deploy/freelec-springboot2-webservice.zip # deploy로 zip파일 이동
+
 deploy:
   - provider: s3
     access_key_id: $AWS_ACCESS_KEY # Travis repo settings에 설정된 값
@@ -53,3 +49,9 @@ deploy:
     deployment_group: freelec-springboot2-webservice-group # 웹 콘솔에서 등록한 CodeDeploy 배포 그룹
     region: ap-northeast-2
     wait-until-deployed: true
+
+# CI 실행 완료 시 설정한 메일로 알람
+notifications:
+  email:
+    recipients:
+      - dbal5886@gmail.com
