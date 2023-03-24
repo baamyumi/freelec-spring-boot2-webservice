@@ -6,7 +6,7 @@ branches:
     - main
 
 # Travis CI Server's Home
-# 해당 디렉토리에서 캐시하여, 같은 의존성은 다음 배포때부터 다시 받지않도록 설정
+# 해당 디렉토리에서 캐시하여, 같은 의존성은 다음 배포때부터 다시 받지않도록 설정한다.
 cache:
   - directories:
       - '$HOME/.m2/repository'
